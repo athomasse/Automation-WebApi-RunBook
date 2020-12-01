@@ -1,0 +1,225 @@
+<?xml version="1.0"?>
+<!-- Ivanti Automation Building Blocks -->
+<!-- Created by lab\administrator on 1-12-2020 11:26:30 -->
+<AutomationManager>
+	<buildingblock version="3.0" bbpwh="9y8AE/GP04hMg6W/5Jbjtg==:20000:PHLetrOfDtBf9uVR9Bu3jCRKiFF1kz2RbHcxSETrxFM=">
+		<projects/>
+		<modules>
+			<module>
+				<properties>
+					<guid>{07106113-82F8-4592-B2BD-685C3396B43C}</guid>
+					<name>Move Computer to OU</name>
+					<enabled>yes</enabled>
+					<description/>
+					<version>1.0.1</version>
+					<versioncomment>Updated version</versioncomment>
+					<properties>
+						<separators/>
+					</properties>
+					<folderpath>
+						<folder>
+							<name>Microsoft</name>
+							<description/>
+							<guid>{A11AE6DE-D44D-4686-BA99-9E438E940BC2}</guid>
+							<folder>
+								<name>Active Directory</name>
+								<description/>
+								<guid>{B9E36537-168B-4F72-985E-1CCEEC47A043}</guid>
+							</folder>
+						</folder>
+					</folderpath>
+					<deleteusedresources>yes</deleteusedresources>
+				</properties>
+				<tasks>
+					<task hidden="yes">
+						<limitinvoke>no</limitinvoke>
+						<parameters/>
+						<conditions>
+							<condition guid="{9EE7796F-81F2-4C53-B5B1-AA790652A683}">
+								<expressions/>
+								<operator>AND</operator>
+								<actiontrue>3</actiontrue>
+								<when>0</when>
+								<action>3</action>
+								<enabled>yes</enabled>
+							</condition>
+						</conditions>
+						<variablescontainer></variablescontainer>
+					</task>
+					<task>
+						<properties>
+							<type>PWRSHELL</type>
+							<guid>{9EE7796F-81F2-4C53-B5B1-AA790652A683}</guid>
+							<description>Execute Windows PowerShell Script</description>
+							<enabled>yes</enabled>
+							<comments/>
+							<onerror>fail</onerror>
+						</properties>
+						<settings>
+							<username/>
+							<password encrypted="yes">{015d45e3-c3ab-45e8-98e2-941328a099c8;s=00059;v=1;m=aes256}X46wIVjDJTXr7u0HRczYR2HwQ58Qe8mKZdUoSu+nBoQ=</password>
+							<usescript>yes</usescript>
+							<source>write-host "Move Computer"</source>
+							<scriptext>ps1</scriptext>
+							<outputwidth>256</outputwidth>
+							<validateexitcode>no</validateexitcode>
+							<failifexitcode>no</failifexitcode>
+							<exitcodes>0</exitcodes>
+							<timeout>10</timeout>
+							<terminate>no</terminate>
+							<snapins/>
+							<overrideexecutionpolicy>no</overrideexecutionpolicy>
+							<usex86psonx64>no</usex86psonx64>
+						</settings>
+					</task>
+				</tasks>
+			</module>
+			<module>
+				<properties>
+					<guid>{2B2AA952-16BE-4567-9005-987B2ECC1B21}</guid>
+					<name>Automation - Message</name>
+					<enabled>yes</enabled>
+					<description/>
+					<version>1.0.0</version>
+					<versioncomment>Initial version</versioncomment>
+					<properties>
+						<separators/>
+					</properties>
+					<folderpath>
+						<folder>
+							<name>Ivanti</name>
+							<description/>
+							<guid>{455ACC2B-616B-499E-8633-AC61D1017B3E}</guid>
+							<folder>
+								<name>Automation</name>
+								<description/>
+								<guid>{3D24AF93-DA72-404B-B43D-224A3840253E}</guid>
+							</folder>
+						</folder>
+					</folderpath>
+					<deleteusedresources>yes</deleteusedresources>
+				</properties>
+				<tasks>
+					<task hidden="yes">
+						<limitinvoke>no</limitinvoke>
+						<parameters/>
+						<conditions>
+							<condition guid="{C93F3D5D-D6B7-43DA-9BA7-86F40014132D}">
+								<expressions/>
+								<operator>AND</operator>
+								<actiontrue>3</actiontrue>
+								<when>0</when>
+								<action>3</action>
+								<enabled>yes</enabled>
+							</condition>
+						</conditions>
+						<variablescontainer></variablescontainer>
+					</task>
+					<task>
+						<properties>
+							<type>MSGBOX</type>
+							<guid>{C93F3D5D-D6B7-43DA-9BA7-86F40014132D}</guid>
+							<description>Show message "Test message" (Information)</description>
+							<enabled>yes</enabled>
+							<comments/>
+							<onerror>fail</onerror>
+						</properties>
+						<settings>
+							<type>info</type>
+							<caption>Test message</caption>
+							<message>Test Message</message>
+							<duration>5</duration>
+							<onlyconsolesession>no</onlyconsolesession>
+						</settings>
+					</task>
+				</tasks>
+			</module>
+		</modules>
+		<resources/>
+		<runbooks>
+			<runbook>
+				<properties>
+					<guid>{A83F11F8-9D5D-4278-B934-39715F379E0E}</guid>
+					<name>Deploy - Windows Server</name>
+					<enabled>yes</enabled>
+					<description/>
+					<version>1.0.1</version>
+					<versioncomment>Updated version</versioncomment>
+					<properties DetermineOrderParams="0">
+						<parameters>
+							<param>
+								<name>RunBookWho</name>
+								<value1/>
+								<value2/>
+								<value3/>
+								<type>0</type>
+								<description/>
+								<hint/>
+								<selection/>
+								<inputtiming>
+									<importbb showprev="no" eraseprev="no">no</importbb>
+									<schedulejob showprev="no" eraseprev="no">yes</schedulejob>
+								</inputtiming>
+								<inputoptions>
+									<confirm>no</confirm>
+									<force>no</force>
+									<required>no</required>
+									<validation>no</validation>
+								</inputoptions>
+							</param>
+						</parameters>
+						<jobs>
+							<job>
+								<guid>{CC60118D-E4EA-43FC-857C-7203EC28FD46}</guid>
+								<properties>
+									<enabled>yes</enabled>
+									<name>Move Computer to OU</name>
+									<timeout>0</timeout>
+									<offlineagentsnextboot>no</offlineagentsnextboot>
+									<wol>no</wol>
+									<selectoneagent>no</selectoneagent>
+									<what type="module">{07106113-82F8-4592-B2BD-685C3396B43C}</what>
+									<whatname>Move Computer to OU</whatname>
+									<who type="agent">{17D7EC32-04C6-4E2A-B20E-00D1FE44E598}</who>
+									<use_runbookparam>no</use_runbookparam>
+									<whoname>SRV-ADDS-01</whoname>
+									<onerror>fail</onerror>
+								</properties>
+							</job>
+							<job>
+								<guid>{1D2445BD-B8F8-4915-9738-E912D33ADBD9}</guid>
+								<properties>
+									<enabled>yes</enabled>
+									<name>Automation - Message</name>
+									<timeout>0</timeout>
+									<offlineagentsnextboot>no</offlineagentsnextboot>
+									<wol>no</wol>
+									<selectoneagent>no</selectoneagent>
+									<what type="module">{2B2AA952-16BE-4567-9005-987B2ECC1B21}</what>
+									<whatname>Automation - Message</whatname>
+									<who type="">
+									</who>
+									<use_runbookparam>yes</use_runbookparam>
+									<runbookparam_who>$[RunBookWho]</runbookparam_who>
+									<runbookparam_behavior>0</runbookparam_behavior>
+									<whoname>
+									</whoname>
+									<onerror>fail</onerror>
+								</properties>
+							</job>
+						</jobs>
+						<separators/>
+						<limitinvoke>no</limitinvoke>
+					</properties>
+					<folderpath/>
+				</properties>
+			</runbook>
+		</runbooks>
+		<teams/>
+		<projectfolders/>
+		<modulefolders/>
+		<resourcefolders/>
+		<runbookfolders/>
+		<teamfolders/>
+	</buildingblock>
+</AutomationManager>
